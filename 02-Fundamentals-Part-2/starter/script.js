@@ -75,7 +75,7 @@ if (mark.bmi > john.bmi) {
     }
 
     //break
-    console.log('BREAK WITH NUMBER');
+    console.log('----BREAK WITH NUMBER----');
     for (let i = 0;  i < years.length; i++ ) {
         if (typeof years[i] !== 'number') break
         console.log(years[i], typeof years[i]);
@@ -83,3 +83,41 @@ if (mark.bmi > john.bmi) {
 
 
 // Coding Challenge 4
+
+const bills2 = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+
+const tips2 =[];
+const totals2 = [];
+
+for (let i = 0; i < bills2.length; i++ ) {
+    const tip = calcTip(bills2[i]);
+    tips2.push(tip);
+    totals2.push(tip + bills2[i]);
+};
+
+console.log(tips2);
+console.log(totals2);
+
+//BONUS CHALLENGE
+let calcAvg2 = function(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++ ) {
+        sum += arr[i];
+        //console.log(sum);
+    }
+    return sum / arr.length;
+}
+
+console.log('Loop version Tips avg: $' + calcAvg2(tips2));
+console.log('Loop version Totals avg: $' + calcAvg2(totals2));
+
+//OR 
+let calcAverage2 = function(arr) {
+    return (arr.reduce((acc, cur) => acc + cur)) / arr.length;
+}
+
+let tipsAvg = calcAverage2(tips2);
+let totalsAvg = calcAverage2(totals2);
+
+console.log('Tips Avg: $' + tipsAvg);
+console.log('Totals Avg: $' + totalsAvg);
