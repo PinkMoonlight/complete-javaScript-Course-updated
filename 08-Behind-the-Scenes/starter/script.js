@@ -64,3 +64,7 @@ function deleteShoppingCart() {
 }
 
 // 'this' keyword
+
+// arrow function doesn't get it
+
+// primitive values vs reference values
